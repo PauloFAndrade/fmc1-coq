@@ -2,7 +2,6 @@
 .*.d
 *.a
 *.cma
-*.cmi
 *.cmo
 *.cmx
 *.cmxa
