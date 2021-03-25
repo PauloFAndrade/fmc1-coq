@@ -50,3 +50,4 @@ Fixpoint expo (n: Nat) (m: Nat) :Nat :=
   |O => S O
   |S m' => (expo n m')*n
   end.
+Notation "x ^ y" := (expo x y).
