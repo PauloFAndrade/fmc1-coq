@@ -13,9 +13,9 @@ Fixpoint plus (n : Nat) (m : Nat) : Nat :=
                        : nat_scope.
   
 (*EXERCÍCIO x4.3 FMCBOOK*)
-Compute (plus 0 (S (S (S (S O))))).
+Compute (plus O (S (S (S (S O))))).
 
-(*EXERCÍCIO X4.4 FMCBOOK* usando notation)
+(*EXERCÍCIO X4.4 FMCBOOK* usando notation*)
 Compute S (S (S O)) + (S(S O)+S O).
 Compute (S (S (S O)) + S (S O)) + S O.
 
@@ -37,4 +37,8 @@ Fixpoint mult (n: Nat) (m:Nat) :Nat :=
                        (at level 40, left associativity)
                        : nat_scope.
                        
-                  
+(*EXERCÍCIO X4.7 FMCBOOK*)                  
+Compute (S (S O)*(O + S O)).
+
+(*EXERCÍCIO X4.8 FMCBOOK*)
+Compute (S (S O) * S (S (S O))).
