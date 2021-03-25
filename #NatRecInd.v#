@@ -44,9 +44,9 @@ Compute (S (S O)*(O + S O)).
 Compute (S (S O) * S (S (S O))).
 Compute (S (S (S O)) * S (S O)).
 
-(*EXERCÍCIO X4.9 FMCBOOK*)
-
-
-
-
-
+(*EXERCÍCIO X4.9 FMCBOOK -> Definindo a Exponenciação*)
+Fixpoint expo (n: Nat) (m: Nat) :Nat :=
+  match m with
+  |O => S O
+  |S m' => (expo n m')*n
+  end.
