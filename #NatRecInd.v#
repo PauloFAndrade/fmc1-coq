@@ -1,3 +1,27 @@
-module fmc1.
+Inductive Nat : Type :=
+  | O
+  | S (n : Nat).
 
-end fmc1.
+Fixpoint plus (n : Nat) (m : Nat) : Nat :=
+  match m with
+    | O => n
+    | S m' => S (plus n m')
+  end.
+  
+  Notation "x + y" := (plus x y)
+                       (at level 50, left associativity)
+                       : nat_scope.
+  
+(*EXERCÍCIO x4.3 FMCBOOK*)
+Compute (plus 0 (S (S (S (S O))))).
+
+(*EXERCÍCIO X4.4 FMCBOOK* usando notation)
+Compute S (S (S O)) + (S(S O)+S O).
+Compute (S (S (S O)) + S (S O)) + S O.
+
+(*EXERCÍCIO X4.5 FMCBOOK*)
+Fixpoint d (n:Nat): Nat :=
+  match n with
+  | O => O
+  | S n' => S (S (d n'))
+  end.
