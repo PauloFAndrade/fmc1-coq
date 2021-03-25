@@ -25,3 +25,16 @@ Fixpoint d (n:Nat): Nat :=
   | O => O
   | S n' => S (S (d n'))
   end.
+Compute (d (S (S (S O)))).
+
+(*EXERCÍCIO X4.6 FMCBOOK -> Definindo Multiplicação*)
+Fixpoint mult (n: Nat) (m:Nat) :Nat :=
+  match m with
+  | O => O
+  | S m => n + (mult n m)
+  end.
+ Notation "x * y" := (mult x y)
+                       (at level 40, left associativity)
+                       : nat_scope.
+                       
+                  
