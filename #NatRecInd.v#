@@ -54,3 +54,13 @@ Notation "x ^ y" := (expo x y).
 
 (*EXERCÍCIO X4.10 FMCBOOK*)
 Compute S (S O) ^ S (S (S O)).
+
+(*EXERCÍCIO X4.11 FMCBOOK*)
+Fixpoint fibo (n: Nat) :Nat :=
+  match n with
+  |O => O
+  |S n' => match n' with
+           | O => S O
+           | S n'' => fibo n' + fibo n''
+           end
+  end.
