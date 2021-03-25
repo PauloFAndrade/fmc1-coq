@@ -51,3 +51,6 @@ Fixpoint expo (n: Nat) (m: Nat) :Nat :=
   |S m' => (expo n m')*n
   end.
 Notation "x ^ y" := (expo x y).
+
+(*EXERCÍCIO X4.10 FMCBOOK*)
+Compute S (S O) ^ S (S (S O)).
