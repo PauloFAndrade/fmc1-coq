@@ -8,9 +8,7 @@ Fixpoint plus (n : Nat) (m : Nat) : Nat :=
     | S m' => S (plus n m')
   end.
   
-  Notation "x + y" := (plus x y)
-                       (at level 50, left associativity)
-                       : nat_scope.
+  Notation "x + y" := (plus x y).
   
 (*EXERCÍCIO x4.3 FMCBOOK*)
 Compute (plus O (S (S (S (S O))))).
@@ -69,3 +67,8 @@ Fixpoint fibo (n: Nat) :Nat :=
 Theorem plusAssociative: forall (a b c: Nat), (a+b)+c = a+(b+c).
 
 Proof. intros a b c. induction c. simpl. reflexivity. simpl. rewrite -> IHc. reflexivity. Qed.  
+
+(*PROOF THAT Sa + b = a + Sb*)
+Theorem sucessor: forall (a b: Nat),(S a) + b = a + S b.
+
+Proof. intros a b. induction b. simpl. reflexivity. simpl. rewrite -> IHb. simpl. reflexivity. Qed.
