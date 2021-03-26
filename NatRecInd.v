@@ -130,7 +130,7 @@ Proof.
 Qed.
 
 (*EXERCÍCIO x4.14 FMCBOOK (Associatividade Multiplicação)*)
-Theorem multCommutative: forall(x y z: Nat), (x*y)*z = x*(y*z).
+Theorem multAssociative: forall(x y z: Nat), (x*y)*z = x*(y*z).
 
 Proof.
   intros x y z.
