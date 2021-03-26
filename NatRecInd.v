@@ -185,3 +185,13 @@ Proof.
     -simpl.
      reflexivity.
 Qed.
+
+Lemma plus_1_l : forall n:Nat, (S O) + n = S n.
+  intros n.
+  induction n.
+    -simpl.
+     reflexivity.
+    -simpl.
+     rewrite IHn.
+     reflexivity.
+Qed.
