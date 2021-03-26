@@ -142,3 +142,16 @@ Proof.
      rewrite IHz.
      reflexivity.
 Qed.
+
+Lemma mult_n_0: forall(n:Nat),O*n = O.
+
+Proof.
+  intro n.
+  induction n.
+    -simpl.
+     reflexivity.
+    -simpl.
+     rewrite IHn.
+     simpl.
+     reflexivity.
+Qed.
