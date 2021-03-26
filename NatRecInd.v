@@ -71,4 +71,26 @@ Proof. intros a b c. induction c. simpl. reflexivity. simpl. rewrite -> IHc. ref
 (*PROOF THAT Sa + b = a + Sb*)
 Theorem sucessor: forall (a b: Nat),(S a) + b = a + S b.
 
-Proof. intros a b. induction b. simpl. reflexivity. simpl. rewrite -> IHb. simpl. reflexivity. Qed.
+Proof. 
+  intros a b.  
+  induction b. 
+  simpl. 
+  reflexivity. 
+  simpl. 
+  rewrite -> IHb. 
+  simpl. 
+  reflexivity. 
+  Qed.
+
+(*PROOF THAT a+0 = 0+a*)
+Theorem plus_O: forall (a: Nat), a = O + a.
+
+Proof. 
+  intro a.
+  induction a.
+  simpl. 
+  reflexivity.
+  simpl.
+  rewrite <- IHa.
+  reflexivity.
+Qed.
