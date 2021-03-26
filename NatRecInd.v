@@ -110,3 +110,21 @@ Proof.
      simpl.
      reflexivity.
 Qed.
+
+(*EXERCÍCIO x4.16 FMCBOOK (Distributividade Multiplicação)*)
+Theorem multDistributivity: forall (x y z: Nat), x*(y+z) = (x*y) + (x*z).
+
+Proof.
+  intros x y z.
+  induction z.
+    trivial.
+    simpl.
+    rewrite IHz.
+    rewrite plusCommutative.
+    rewrite plusAssociative.
+    assert(T: x * z + x = x + x * z).
+      -rewrite plusCommutative.
+       reflexivity.
+      -rewrite T.
+       reflexivity.
+Qed.
