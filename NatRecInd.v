@@ -94,3 +94,19 @@ Proof.
   rewrite <- IHa.
   reflexivity.
 Qed.
+
+(*PROOF THAT PLUS IS COMMUTATIVE*)
+Theorem plusCommutative: forall (a b: Nat), a + b = b + a.
+
+Proof. 
+  intros a b.
+  induction a.
+    -simpl.
+     rewrite plus_O.
+     reflexivity.
+    -simpl.
+     rewrite <- IHa.
+     rewrite -> sucessor.
+     simpl.
+     reflexivity.
+Qed.
