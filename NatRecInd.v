@@ -155,3 +155,15 @@ Proof.
      simpl.
      reflexivity.
 Qed.
+
+Lemma plus_n_0: forall(n:Nat), O+n = n.
+
+Proof.
+  intro n.
+  induction n.
+    -simpl.
+     reflexivity.
+    -simpl.
+     rewrite IHn.
+     reflexivity.
+Qed.
