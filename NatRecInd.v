@@ -129,7 +129,7 @@ Proof.
        reflexivity.
 Qed.
 
-(*EXERCÍCIO x4.14 FMCBOOK (Comutatividade Multiplicação)*)
+(*EXERCÍCIO x4.14 FMCBOOK (Associatividade Multiplicação)*)
 Theorem multCommutative: forall(x y z: Nat), (x*y)*z = x*(y*z).
 
 Proof.
