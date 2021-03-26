@@ -66,7 +66,15 @@ Fixpoint fibo (n: Nat) :Nat :=
 (*PROOF THAT PLUS IS ASSOCIATIVE*)
 Theorem plusAssociative: forall (a b c: Nat), (a+b)+c = a+(b+c).
 
-Proof. intros a b c. induction c. simpl. reflexivity. simpl. rewrite -> IHc. reflexivity. Qed.  
+Proof. 
+  intros a b c. 
+  induction c. 
+  simpl. 
+  reflexivity. 
+  simpl. 
+  rewrite -> IHc. 
+  reflexivity. 
+Qed.  
 
 (*PROOF THAT Sa + b = a + Sb*)
 Theorem sucessor: forall (a b: Nat),(S a) + b = a + S b.
