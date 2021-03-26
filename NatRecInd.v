@@ -128,3 +128,17 @@ Proof.
       -rewrite T.
        reflexivity.
 Qed.
+
+(*EXERCÍCIO x4.14 FMCBOOK (Comutatividade Multiplicação)*)
+Theorem multCommutative: forall(x y z: Nat), (x*y)*z = x*(y*z).
+
+Proof.
+  intros x y z.
+  induction z.
+    -simpl.
+     reflexivity.
+    -simpl.
+     rewrite multDistributivity.
+     rewrite IHz.
+     reflexivity.
+Qed.
