@@ -175,3 +175,13 @@ Proof.
      rewrite IHn.
      reflexivity.
 Qed.
+
+Lemma mult_n_Sm : forall (n m : Nat), n * S m = n + n * m.
+
+Proof.
+  intros n m.
+  induction n.
+    -reflexivity.
+    -simpl.
+     reflexivity.
+Qed.
