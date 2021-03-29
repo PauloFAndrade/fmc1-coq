@@ -186,7 +186,7 @@ Proof.
      reflexivity.
 Qed.
 
-Lemma plus_1_l : forall n:Nat, (S O) + n = S n.
+Lemma plus_1_l : forall (n:Nat), (S O) + n = S n.
   intros n.
   induction n.
     -simpl.
@@ -195,3 +195,5 @@ Lemma plus_1_l : forall n:Nat, (S O) + n = S n.
      rewrite IHn.
      reflexivity.
 Qed.
+
+Theorem multCommutative: forall (n m:Nat), n * m = m * n.
