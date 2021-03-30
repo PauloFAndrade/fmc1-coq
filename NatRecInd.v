@@ -77,7 +77,7 @@ Proof.
 Qed.  
 
 (*PROOF THAT Sa + b = a + Sb*)
-Theorem sucessor: forall (a b: Nat),(S a) + b = a + S b.
+Theorem sucessor: forall (a b: Nat),(S a) + b = a + (S b).
 
 Proof. 
   intros a b.  
@@ -196,4 +196,33 @@ Lemma plus_1_l : forall (n:Nat), (S O) + n = S n.
      reflexivity.
 Qed.
 
-Theorem multCommutative: forall (n m:Nat), n * m = m * n.
+Theorem multCommutative : forall (n m : Nat), n * m = m * n.
+
+Proof.
+  induction n.
+    -induction m.
+      +simpl.
+       reflexivity.
+      +simpl. 
+       rewrite IHm.
+       simpl.
+       reflexivity.
+    -induction m.
+      +simpl.
+       rewrite mult_n_0.
+       simpl.
+       reflexivity.
+      +simpl.
+       rewrite IHm.
+       rewrite <- (IHn (S m)).
+       simpl.
+       rewrite <- (IHn m).
+       rewrite <-(plusAssociative (S n)m(n*m)).
+       rewrite <-(plusAssociative (S m)n(n*m)).
+       rewrite <- plus_1_l.
+       rewrite <-(plus_1_l m).
+       rewrite (plusAssociative (S O)(n)(m)).
+       rewrite (plusCommutative n m).
+       rewrite <- (plusAssociative (S O) m n).
+       reflexivity.
+Qed.
